@@ -14,3 +14,12 @@ http://localhost:9000/swagger-ui/index.html.
 ## Note: 
 ### We start on section 6 V2
 ### And we delete the Spring Cloud Buss and RabbitMQ stuff.
+
+
+## Eureka Server
+
+### Generete the Eureka Server using https://start.spring.io/
+add: 
+- Eureka Server
+- Config Client
+- Spring Boot Actuator
