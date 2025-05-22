@@ -28,7 +28,7 @@ management:
         include: "*"
   endpoint:
     shutdown:
-      unrestricted: true  # This replaces enabled, which is deprecated.
+      enabled: true  # Enabled is deprecated. It is replaced by restricted.
   info:
     env:
       enabled: true
