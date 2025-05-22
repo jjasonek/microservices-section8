@@ -23,3 +23,16 @@ add:
 - Eureka Server
 - Config Client
 - Spring Boot Actuator
+
+### Start the config server and confirm the eureka properties:
+http://localhost:8071/eurekaserver/default
+
+### Start h=the eureka server and confirm the eureka properties:
+...
+2025-05-22T14:06:48.102+02:00  INFO 24212 --- [eurekaserver] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8071
+...
+2025-05-22T14:06:53.620+02:00  INFO 24212 --- [eurekaserver] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8070 (http) with context path '/'
+2025-05-22T14:06:53.621+02:00  INFO 24212 --- [eurekaserver] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8070
+...
+
+http://localhost:8070/ brings up the Eureka dashboard.
