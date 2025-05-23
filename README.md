@@ -101,3 +101,36 @@ endpoints:
     shutdown:
         enabled: true
 **is not needed**.
+
+
+## Linking services together using the OpenFeign Client
+
+### Request:
+GET http://localhost:8080/api/fetchCustomerDetails?mobileNumber=4354437687
+### Response:
+{
+    "name": "Madan Reddy",
+    "email": "tutor@eazybytes",
+    "mobileNumber": "4354437687",
+    "accountsDto": {
+        "accountNumber": 1024671414,
+        "accountType": "Savings",
+        "branchAddress": "123 Main Street, New York"
+    },
+    "loansDto": {
+        "mobileNumber": "4354437687",
+        "loanNumber": "100468436788",
+        "loanType": "Home Loan",
+        "totalLoan": 100000,
+        "amountPaid": 0,
+        "outstandingAmount": 100000
+    },
+    "cardsDto": {
+        "mobileNumber": "4354437687",
+        "cardNumber": "100500947447",
+        "cardType": "Credit Card",
+        "totalLimit": 100000,
+        "amountUsed": 0,
+        "availableAmount": 100000
+    }
+}
