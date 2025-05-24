@@ -134,3 +134,33 @@ GET http://localhost:8080/api/fetchCustomerDetails?mobileNumber=4354437687
         "availableAmount": 100000
     }
 }
+
+
+## Generating docker images
+
+docker logout
+docker login -u jjasonek
+
+cd accounts
+mvn compile jib:dockerBuild
+cd ..\cards
+mvn compile jib:dockerBuild
+cd ..\configserver\
+mvn compile jib:dockerBuild
+cd ..\eurekaserver\
+mvn compile jib:dockerBuild
+cd ..\loans\
+mvn compile jib:dockerBuild
+
+### Delete old images
+docker rmi f70a201defbf cc115ee4240a 8db789bb4aa8 2089b8cc8fd2
+
+### push images
+docker image push docker.io/jjasonek/accounts:s8
+docker image push docker.io/jjasonek/configserver:s8
+docker image push docker.io/jjasonek/eurekaserver:s8
+docker image push docker.io/jjasonek/loans:s8
+docker image push docker.io/jjasonek/cards:s8
+
+### run the images
+docker compose up -d
